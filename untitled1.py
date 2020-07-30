@@ -1,16 +1,32 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jul 29 10:19:41 2020
+Created on Thu Jul 30 11:00:20 2020
 
 @author: appedu
 """
 
 from mcpi.minecraft import Minecraft
-mc=Minecraft.create()
-x,y,z = mc.player.getTilePos()
-while True:
-    hits = mc.events.pollBlockHits()
-    if len(hits)>0:
-        hit = hits[0]
-        x,y,z=hit.pos.x, hit.pos.y, hit.pos.z
-        mc.setBlock(x,y,z,46)
+import random
+mc = Minecraft.create()
+x,y,z=mc.player.getPos()
+for i in range(5):
+    r=random.randrange(1,5)
+    #z+
+    if r==1:
+       mc.setBlock(x,y,z,x,y,z+4,1)
+       z=z+4
+    #z-
+    if r==2:
+        mc.setBlock(x,y,z,x,y,z-4,1)
+        z=z-4
+    #x-
+    if r==3:
+        mc.setBlock(x,y,z,x-4,y,z,1)
+        x=x-4
+    #x+
+    if r==4:
+        mc.setBlock(x,y,z,x+4,y,z,1)
+        x = x+4
+     
+    
+    
