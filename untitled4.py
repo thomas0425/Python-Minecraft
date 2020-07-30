@@ -1,5 +1,10 @@
-from mcpi.minecraft import Minecraft
-mc=Minecraft.create()
-x,y,z = mc.player.getTilePos()
-for i in range(20):
-    mc.setBlock(x+i,y-1,z+i,1)
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul 30 13:46:58 2020
+
+@author: appedu
+"""
+
+while True:
+    mc.executeCommand("time add 100")
+    time.sleep(0.05)

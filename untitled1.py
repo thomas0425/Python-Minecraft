@@ -13,20 +13,26 @@ for i in range(5):
     r=random.randrange(1,5)
     #z+
     if r==1:
-       mc.setBlock(x,y,z,x,y,z+4,1)
+       mc.setBlocks(x,y,z,x,y,z+4,1)
        z=z+4
     #z-
-    if r==2:
-        mc.setBlock(x,y,z,x,y,z-4,1)
+    elif r==2:
+        mc.setBlocks(x,y,z,x,y,z-4,1)
         z=z-4
     #x-
-    if r==3:
-        mc.setBlock(x,y,z,x-4,y,z,1)
+    elif r==3:
+        mc.setBlocks(x,y,z,x-4,y,z,1)
         x=x-4
     #x+
-    if r==4:
-        mc.setBlock(x,y,z,x+4,y,z,1)
+    elif r==4:
+        mc.setBlocks(x,y,z,x+4,y,z,1)
         x = x+4
-     
+    elif r==5:
+        mc.setBlocks(x,y,z,x,y-4,z,1)
+        y=y-4
+     #x+
+    else:
+        mc.setBlocks(x,y,z,x,y+4,z,1)
+        y=y+4
     
     
